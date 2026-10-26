@@ -11,13 +11,14 @@ int main(){
     
     int *vetor = malloc(capacidade * sizeof(int));
     
+    // quando o "malloc" falha ele retorna "NULL", por conta disso é nssesario apos usar ele
+    // colocar um "if" com uma verificasao para o codigo não quebrar
     if(vetor == NULL){
         return 1;
     }
     
-    printf("Digite numeros (0 para parar): \n");
-    
-    while(1){
+    printf("Digite os valores do vetor(digite 0 para finalizar o programa):\n");
+    while(true){
         scanf("%d", &numero);
         
         if(numero == 0){
@@ -26,28 +27,31 @@ int main(){
         
         if(quantidade == capacidade){
             capacidade = capacidade * 2;
+            int *tamp = realloc(vetor, capacidade * sizeof(int));
             
-            int *temp = realloc(vetor, capacidade * sizeof(int));
-            
-            if(temp == NULL){
+            if(tamp == NULL){
                 free(vetor);
                 return 1;
             }
             
-            vetor = temp;
+            vetor = tamp;
         }
         
         vetor[quantidade] = numero;
         quantidade++;
     }
     
-    printf("Numeros digitados: \n");
-    
+    printf("[");
     for(int i = 0; i < quantidade; i++){
-        printf("%d\n", vetor[i]);
+        printf("%d", vetor[i]);
+        
+        if(i < quantidade - 1){
+            printf(", ");
+        }
     }
+    printf("]");
     
     free(vetor);
-    
+
     return 0;
 }
