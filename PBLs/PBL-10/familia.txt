@@ -1,0 +1,10 @@
+ 5 172.0 Graciliano Ramos
+ 8 167.0 Antonia Ramos
+ 3 175.0 Teresa Ramos
+ 6 181.0 Paulo Ramos
+10 164.0 Silvio Ramos
+ 7 175.0 Alzira Ramos
+ 4 155.0 Marcia Ramos
+ 1 184.0 Luiz Ramos
+ 9 178.0 Isabel Ramos
+ 2 175.0 Pedro Ramos
